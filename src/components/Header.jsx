@@ -1,20 +1,43 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+
+function fetchNavData() {
+  return [
+    { route: '/', title: 'Home' },
+    { route: '/pages', title: 'Pages' },
+    { route: '/booking', title: 'Booking' },
+    { route: '/services', title: 'Services' },
+    { route: '/blog', title: 'Blog' },
+    { route: '/gallery', title: 'Gallery' },
+    { route: '/contact', title: 'Contact' }
+  ];
+}
+
+function getNavLinks(navData) {
+  return navData.map(
+    (navObject) => (
+      <NavLink
+        to={navObject.route}
+        key={navObject.route}
+      >
+        {navObject.title}
+      </NavLink>
+    )
+  );
+}
 
 function Header() {
+  const navData = fetchNavData();
+  const navLinks = getNavLinks(navData);
+
   return (
     <header>
       <div className='header-wrap'>
         <a className='logo' href='/'>
-          <img src='./images/logo.png' alt='logo' />
+          <img src='/images/logo.png' alt='logo' />
         </a>
         <nav className='header-nav'>
-          <a href='/'>Home</a>
-          <a href='/pages'>Pages</a>
-          <a href='/booking'>Booking</a>
-          <a href='/services'>Services</a>
-          <a href='/blog'>Blog</a>
-          <a href='/gallery'>Gallery</a>
-          <a href='/contact'>Contact</a>
+          {navLinks}
         </nav>
         <button>
           <img src='./images/search.svg' alt='search' />

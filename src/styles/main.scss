@@ -7,7 +7,7 @@
   flex-direction: column;
   font-size: 1.8rem;
   font-family: $font-main;
-  color: $color-white;
+  color: $color-black;
   
   main {
     flex-grow: 1;
@@ -16,7 +16,9 @@
 
 header {
   padding: 3rem;
-  background: $color-black;
+  background: transparent;
+  position: fixed;
+  width: 100%;
 
   .header-wrap {
     display: flex;
@@ -31,11 +33,125 @@ header {
         font-weight: 600;
         color: $color-white;
         letter-spacing: 1.2px;
+        text-transform: uppercase;
         transition: all 0.2s;
 
         &:hover {
           color: $color-primary;
           transition: all 0.2s;
+        }
+      }
+    }
+  }
+}
+
+.hero {
+  background: no-repeat center / cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: $color-white;
+  text-transform: uppercase;
+
+  p {
+    font-size: 2.8rem;
+    font-weight: 600;
+    letter-spacing: 4px;
+    margin-bottom: 2.5rem;
+  }
+
+  h1 {
+    font-family: $font-secondary;
+    font-size: 13rem;
+    font-weight: 900;
+    letter-spacing: -1px;
+    line-height: 110px;
+  }
+}
+
+
+.about {
+  padding: 14rem 0;
+
+  .about-wrap {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    min-height: 70rem;
+    max-height: 70rem;
+    border: 2rem solid $color-accent;
+
+    > img {
+      position: absolute;
+      top: 50%;
+      left: -8rem;
+      transform: translateY(-50%);
+    }
+
+    .about-content {
+      width: 49%;
+
+      .about-content-header-top {
+        font-weight: 400;
+        letter-spacing: 12px;
+        text-transform: uppercase;
+        color: $color-body;
+        margin-bottom: 1.5rem;
+      }
+
+      h2 {
+        letter-spacing: -1px;
+        font-size: 4rem;
+        font-weight: 800;
+        line-height: 4.9rem;
+        margin-bottom: 1.5rem;
+        color: $color-heading;
+        font-family: 'Montserrat';
+      }
+
+      .about-content-desc {
+        color: $color-body;
+        line-height: 2.8rem;
+        margin-bottom: 4rem;
+        max-height: 30rem;
+        overflow: auto;
+      }
+
+      > a {
+        background: $color-primary;
+        border-radius: 9rem;
+        padding: 2.4rem 4.8rem;
+        color: $color-white;
+        font-size: 1.6rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        transition: all 0.2s;
+
+        &:hover {
+          background: $color-heading;
+          transition: all 0.2s;
+        }
+      }
+
+      .about-content-social {
+        display: flex;
+        gap: 1.6rem;
+
+        a {
+          width: 2rem;
+          height: 2rem;
+
+          img {
+            width: 100%;
+            height: 100%;
+
+            &:hover { // accent?
+              opacity: 0.7;
+            }
+          }
         }
       }
     }
