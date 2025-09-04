@@ -20,6 +20,13 @@ header {
   position: fixed;
   width: 100%;
 
+  &.header-initial {
+    background-color: transparent;
+  }
+  &.header-scrolled {
+    background-color: $color-black;
+  }
+
   .header-wrap {
     display: flex;
     justify-content: space-between;

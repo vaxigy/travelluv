@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 function fetchNavData() {
@@ -27,11 +27,26 @@ function getNavLinks(navData) {
 }
 
 function Header() {
+  const SCROLL_AMOUNT = 150;
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => (
+      setIsScrolled(window.scrollY > SCROLL_AMOUNT)
+    );
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   const navData = fetchNavData();
   const navLinks = getNavLinks(navData);
 
   return (
-    <header>
+    <header className={isScrolled ? 'header-scrolled' : 'header-initial'}>
       <div className='header-wrap'>
         <a className='logo' href='/'>
           <img src='/images/logo.png' alt='logo' />
