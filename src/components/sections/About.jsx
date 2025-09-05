@@ -61,7 +61,7 @@ function About({ renderFull }) {
       ))}
     </div>
     :
-    <Link to='/about'>
+    <Link to='/about' className='button-primary'>
       Read full story
     </Link>
   );
