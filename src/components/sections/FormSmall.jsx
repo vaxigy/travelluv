@@ -8,13 +8,13 @@ function FormSmall() {
   const handleInputChange = (event) => {
     const input = event.target;
     setInputValue(input.value);
-  }
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     if (!inputValue) {
       setStatus({
-        class: 'message',
+        class: 'failure',
         message: 'Fill out the form'
       });
       return;
@@ -32,7 +32,7 @@ function FormSmall() {
         message: 'Something went wrong. Try again later'
       });
     }
-  }
+  };
 
   return (
     <div className='form-small'>
@@ -54,7 +54,7 @@ function FormSmall() {
           Subscribe
         </button>
       </form>
-      <p className={status.class}>{status.message}</p>
+      <p className={`status-box ${status.class}`}>{status.message}</p>
     </div>
   );
 }

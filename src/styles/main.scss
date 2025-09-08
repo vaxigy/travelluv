@@ -151,64 +151,104 @@ header {
   }
 }
 
+.form-small {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  max-width: 55rem;
+  margin-bottom: 5rem;
+  text-align: center;
+
+  h2 {
+    font-size: 4rem;
+    font-weight: 800;
+    font-family: $font-secondary;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    input {
+      background: $color-white;
+      border-radius: 9rem;
+      padding: 2.4rem 4.8rem;
+      text-align: center;
+      font-size: 2rem;
+      border: none;
+
+      &:focus {
+        outline: 3px solid lightgray;
+      }
+    }
+
+    input:disabled,
+    button:disabled {
+      opacity: 50%;
+      pointer-events: none;
+    }
+  }
+}
+
 footer {
   padding: 14rem 0;
   background: no-repeat center / cover;
   color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
 
-  .form-small {
+  .footer-wrap {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
-    max-width: 55rem;
-    margin-bottom: 5rem;
-  
-    h2 {
-      font-size: 4rem;
-      font-weight: 800;
-      font-family: $font-secondary;
-    }
-  
-    form {
+    align-items: center;
+
+    .footer-menu {
       display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-  
-      input {
-        background: $color-white;
-        border-radius: 9rem;
-        padding: 2.4rem 4.8rem;
-        text-align: center;
-        font-size: 2rem;
-        border: none;
-  
-        &:focus {
-          outline: 3px solid lightgray;
+      gap: 10rem;
+      margin-bottom: 15rem;
+
+      .footer-column {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+
+        &.info {
+          min-width: 27rem;
+
+          img {
+            width: 16.8rem;
+          }
         }
-      }
-  
-      input:disabled,
-      button:disabled {
-        opacity: 50%;
-        pointer-events: none;
-      }
-    }
-  
-    p {
-      height: 2.2rem;
-  
-      &.success {
-        color: green;
-      }
-      &.failure {
-        color: red;
-      }
-      &.message {
-        color: yellow;
+
+        &.nav {
+          h3 {
+            font-family: $font-secondary;
+            font-size: 2rem;
+            font-weight: 500;
+          }
+
+          ul {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+
+            li {
+              font-size: 1.5rem;
+              font-weight: 600;
+              text-transform: uppercase;
+
+              a {
+                color: $color-white;
+                transition: all 0.1s;
+
+                &:hover {
+                  color: $color-primary;
+                  transition: all 0.1s;
+                }
+              }
+            }
+          }
+        }
       }
     }
   }

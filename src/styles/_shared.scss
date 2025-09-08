@@ -15,3 +15,14 @@
     transition: all 0.2s;
   }
 }
+
+.status-box {
+  height: 2.2rem;
+
+  &.success {
+    color: green;
+  }
+  &.failure {
+    color: red;
+  }
+}
