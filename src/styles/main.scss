@@ -340,3 +340,125 @@ footer {
     }
   }
 }
+
+.posts {
+  padding: 14rem 0;
+  background-color: #f0f0f0;
+
+  .posts-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+
+    .posts-container {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+
+      h2 {
+        text-align: center;
+      }
+
+      .posts-container-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 1rem;
+
+        .post {
+          display: flex;
+          flex-direction: column;
+          width: 27rem;
+          border-top-left-radius: 2rem;
+          border-top-right-radius: 2rem;
+          border-bottom-left-radius: 3rem;
+          border-bottom-right-radius: 3rem;
+          background: $color-white;
+
+          img {
+            width: 100%;
+            aspect-ratio: 1 / 0.7;
+            border-top-left-radius: 2rem;
+            border-top-right-radius: 2rem;
+            object-fit: cover;
+          }
+
+          > div {
+            padding: 2.5rem;
+
+            h4 {
+              font-weight: 300;
+              color: $color-primary;
+              margin-bottom: 2rem;
+              text-transform: uppercase;
+            }
+
+            a {
+              font-size: 2rem;
+              font-weight: 600;
+              font-family: $font-secondary;
+              color: $color-black;
+              transition: all 0.2s;
+
+              &:hover {
+                color: $color-primary;
+                transition: all 0.2s;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.article {
+  padding-top: 10rem;
+  padding-bottom: 14rem;
+
+  .article-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+
+    .article-meta {
+      text-transform: uppercase;
+
+      span {
+        font-weight: 700;
+      }
+    }
+
+    h2 {
+      font-size: 4rem;
+      font-weight: 800;
+      font-family: $font-secondary;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 1.5rem;
+    }
+
+    .article-content {
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+
+      h3 {
+        font-size: 2.8rem;
+        font-weight: 600;
+        font-family: $font-secondary;
+      }
+
+      p {
+        color: $color-body;
+      }
+
+      h4 {
+        font-weight: 700;
+        color: $font-secondary;
+      }
+    }
+  }
+}
