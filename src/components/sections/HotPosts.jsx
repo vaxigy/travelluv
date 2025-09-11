@@ -1,19 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import PostCard from '../shared/PostCard';
 
-function renderPost(postData) {
-  return (
-    <div className='post'>
-      <img src={postData.image} alt="" />
-      <div>
-        <h4>{postData.category}</h4>
-        <Link to={`/article/${postData.id}`}>{postData.description}</Link>
-      </div>
-    </div>
-  );
-}
-
-function Posts() {
+function HotPosts() {
   const popularPosts = [
     {
       id: 1,
@@ -68,19 +56,19 @@ function Posts() {
   ];
 
   return (
-    <section class='posts'>
+    <section className='hot-posts'>
       <div className="container">
-        <div className="posts-wrap">
-          <div className="posts-container">
+        <div className="hot-posts-wrap">
+          <div className="hot-posts-container">
             <h2 className='base-heading'>Popular Stories</h2>
-            <div className='posts-container-inner'>
-              {popularPosts.map((post) => renderPost(post))}
+            <div className='hot-posts-container-inner'>
+              {popularPosts.map((post) => <PostCard postData={post} />)}
             </div>
           </div>
-          <div className="posts-container">
+          <div className="hot-posts-container">
             <h2 className='base-heading'>Latest Posts</h2>
-            <div className='posts-container-inner'>
-              {latestPosts.map((post) => renderPost(post))}
+            <div className='hot-posts-container-inner'>
+              {latestPosts.map((post) => <PostCard postData={post} />)}
             </div>
           </div>
         </div>
@@ -89,4 +77,4 @@ function Posts() {
   );
 }
 
-export default Posts;
+export default HotPosts;

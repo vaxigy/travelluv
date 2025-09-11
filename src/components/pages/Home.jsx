@@ -1,7 +1,7 @@
 import React from 'react';
 import Hero from '../sections/Hero';
 import About from '../sections/About';
-import Posts from '../sections/Posts';
+import HotPosts from '../sections/HotPosts';
 
 function Home() {
   const configHero = {
@@ -15,7 +15,7 @@ function Home() {
     <>
       <Hero config={configHero} />
       <About renderFull={false} />
-      <Posts />
+      <HotPosts />
     </>
   );
 }
