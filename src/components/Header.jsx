@@ -26,7 +26,7 @@ function getNavLinks(navData) {
   );
 }
 
-function Header() {
+function Header({ onSearchClick }) {
   const SCROLL_AMOUNT = 150;
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -55,7 +55,7 @@ function Header() {
           {navLinks}
         </nav>
         <button>
-          <img src='./images/search.svg' alt='search' />
+          <img src='./images/search-white.svg' alt='search' onClick={onSearchClick} />
         </button>
       </div>
     </header>
