@@ -17,7 +17,7 @@ function App() {
       <Header onSearchClick={() => setIsSearchOverlayOpen(true)}/>
       <Main />
       <Footer />
-      <SearchOverlay isOpen={isSearchOverlayOpen} onClose={() => setIsSearchOverlayOpen(false)}/>
+      {isSearchOverlayOpen && <SearchOverlay onClose={() => setIsSearchOverlayOpen(false)}/>}
     </div>
   );
 }

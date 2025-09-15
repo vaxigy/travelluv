@@ -574,3 +574,45 @@ footer {
     }
   }
 }
+
+.post-filter {
+  padding: 14rem 0;
+  background-color: $color-dark;
+
+  .post-filter-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .post-filter-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+
+      button {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: $color-white;
+        text-transform: capitalize;
+        border-radius: 2rem;
+        padding: 1.5rem;
+        transition: all 0.15s;
+
+        &.active {
+          background: $color-primary;
+        }
+        &:hover:not(.active) {
+          color: $color-primary;
+          transition: all 0.15s;
+        }
+      }
+    }
+
+    .post-filter-posts {
+      display: flex;
+      align-items: flex-start;
+      gap: 2.6rem;
+      flex-wrap: wrap;
+    }
+  }
+}

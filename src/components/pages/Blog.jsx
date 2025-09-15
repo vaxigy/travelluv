@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import Hero from '../sections/Hero';
 import SearchPosts from '../sections/SearchPosts';
 import HotPosts from '../sections/HotPosts';
+import PostFilter from '../sections/PostFilter';
 
 function Blog() {
   const configHero = {
@@ -21,6 +22,7 @@ function Blog() {
       <Hero config={configHero} />
       {searchTerm !== null && <SearchPosts searchTerm={searchTerm} />}
       <HotPosts />
+      <PostFilter />
     </>
   );
 }

@@ -69,14 +69,10 @@ function filterPosts(term) {
   );
 }
 
-function SearchOverlay({ isOpen, onClose }) {
+function SearchOverlay({ onClose }) {
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPosts, setCurrentPosts] = useState([]);
   const navigate = useNavigate();
-
-  if (!isOpen) {
-    return null;
-  }
   
   const handleClose = () => {
     setSearchTerm('');
