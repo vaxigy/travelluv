@@ -616,3 +616,86 @@ footer {
     }
   }
 }
+
+.image-filter {
+  padding: 14rem 0;
+  
+  .image-filter-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+
+    .image-filter-tabs {
+      display: flex;
+      gap: 1rem;
+
+      button {
+        padding: 1rem 2.5rem;
+        background: $color-white;
+        border: 1px solid $color-border;
+        text-transform: uppercase;
+        font-size: 1.6rem;
+
+        &.active,
+        &:hover {
+          background: $color-accent;
+          color: $color-white;
+          transition: all 0.3s;
+        }
+      }
+    }
+
+    .image-filter-images {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+
+      img {
+        width: calc(25% - 1rem);
+        cursor: pointer;
+      }
+    }
+  }
+
+  .image-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 0, 0, 50%);
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .image-popup-content {
+      button {
+        position: absolute;
+        width: 35px;
+        height: 35px;
+        background: no-repeat center / cover;
+      }
+
+      .image-popup-close {
+        top: 20px;
+        right: 20px;
+      }
+
+      .image-popup-previous,
+      .image-popup-next {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .image-popup-previous {
+        left: 20px;
+      }
+
+      .image-popup-next {
+        right: 20px;
+      }
+    }
+  }
+}

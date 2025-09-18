@@ -4,6 +4,7 @@ import Home from './pages/Home.jsx';
 import Contact from './pages/Contact.jsx';
 import SingleArticle from './pages/SingleArticle.jsx';
 import Blog from './pages/Blog.jsx';
+import Gallery from './pages/Gallery.jsx';
 
 function Main() {
   return (
@@ -13,6 +14,7 @@ function Main() {
         <Route path='/contact' element={<Contact />} />
         <Route path='/article/:id' element={<SingleArticle />} />
         <Route path='/blog' element={<Blog />} />
+        <Route path='/gallery' element={<Gallery />} />
       </Routes>
     </main>
   );
