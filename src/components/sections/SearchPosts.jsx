@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PostCard from '../shared/PostCard';
 
 const posts = [
@@ -61,19 +61,62 @@ function findPostsByTerm(searchTerm) {
 }
 
 function SearchPosts({ searchTerm }) {
-  const postsFound = findPostsByTerm(searchTerm);
-  const postsRendered = postsFound.length ?
-    postsFound.map(
-      (post) => <PostCard postData={post}/>
-    )
-    :
-    <div className='search-posts-not-found'>No posts found</div>;
+  const foundPosts = findPostsByTerm(searchTerm);
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const articlePerPage = 4;
+  const totalPageCount = Math.ceil(foundPosts.length / articlePerPage);
+
+  const firstArticleIndex = currentPage * articlePerPage - articlePerPage;
+  const lastArticleIndex = firstArticleIndex + articlePerPage;
+  const currentArticles = foundPosts.slice(firstArticleIndex, lastArticleIndex);
+
+  const showPage = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+  const showPreviousPage = () => {
+    setCurrentPage((prev) => Math.min(prev - 1, 1));
+  };
+  const showNextPage = () => {
+    setCurrentPage((prev) => Math.max(prev + 1, totalPageCount));
+  };
 
   return (
     <section className='search-posts'>
       <div className="container">
-        <h2 className='base-heading'>Search Results</h2>
-        <div className="search-posts-container">{postsRendered}</div>
+        <div className="search-posts-wrap">
+          <h2 className='base-heading'>Search Results</h2>
+          <div className="search-posts-content">
+            {currentArticles.length !== 0 ?
+              currentArticles.map((post) => <PostCard postData={post} />) :
+              <div className='search-posts-not-found'>No posts found</div>}
+          </div>
+          {totalPageCount > 1 && (
+            <div className="search-posts-pagination-bar">
+              <button
+                className="search-posts-page-previous"
+                onClick={showPreviousPage}
+                disabled={currentPage <= 1}
+              >Previous</button>
+              <div className="search-posts-page-numbers">
+                {[...Array(totalPageCount)].map((_, index) => {
+                  const pageNumber = index + 1;
+                  return (
+                    <button
+                      className={pageNumber === currentPage ? 'active' : ''}
+                      onClick={() => showPage(pageNumber)}
+                    >{pageNumber}</button>
+                  );
+                })}
+              </div>
+              <button
+                className="search-posts-page-next"
+                onClick={showNextPage}
+                disabled={currentPage >= totalPageCount}
+              >Next</button>
+            </div>
+          )}
+        </div>
       </div>
     </section>
   );

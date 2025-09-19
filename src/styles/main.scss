@@ -473,20 +473,57 @@ footer {
   background-color: #f0f0f0;
   border-bottom: 3px solid $color-border;
 
-  h2 {
-    text-align: center;
-    margin-bottom: 2.5rem;
-  }
-
-  .search-posts-container {
+  .search-posts-wrap {
     display: flex;
-    align-items: flex-start;
-    gap: 2.6rem;
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 2.5rem;
 
-    .search-posts-not-found {
-      width: 100%;
+    h2 {
       text-align: center;
+    }
+
+    .search-posts-content {
+      display: flex;
+      align-items: flex-start;
+      gap: 2.6rem;
+      flex-wrap: wrap;
+
+      .search-posts-not-found {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    .search-posts-pagination-bar {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+
+      button {
+        padding: 1.5rem;
+        border-radius: 7px;
+        font-size: 1.6rem;
+        font-family: $font-secondary;
+
+        &.active {
+          color: $color-primary;
+        }
+        &:hover {
+          background: rgb(0, 0, 0, 10%);
+        }
+        &:disabled {
+          cursor: default;
+
+          &:hover {
+            background: transparent;
+          }
+        }
+      }
+
+      .search-posts-page-numbers {
+        display: flex;
+        gap: 0.5rem;
+      }
     }
   }
 }
