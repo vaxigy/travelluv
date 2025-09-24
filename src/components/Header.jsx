@@ -6,10 +6,10 @@ function fetchNavData() {
     { route: '/', title: 'Home' },
     { route: '/pages', title: 'Pages' },
     { route: '/booking', title: 'Booking' },
-    { route: '/services', title: 'Services' },
     { route: '/blog', title: 'Blog' },
     { route: '/gallery', title: 'Gallery' },
-    { route: '/contact', title: 'Contact' }
+    { route: '/contact', title: 'Contact' },
+    { route: '/faq', title: 'FAQ' }
   ];
 }
 

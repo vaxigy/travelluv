@@ -736,3 +736,116 @@ footer {
     }
   }
 }
+
+.faq {
+  padding: 14rem 0;
+
+  .faq-wrap {
+    display: flex;
+    gap: 5rem;
+    color: $color-body;
+    font-size: 18px;
+
+    .faq-left,
+    .faq-right {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    .faq-left {
+      min-width: calc(66.6% - 2.5rem);
+      max-width: calc(66.6% - 2.5rem);
+
+      .faq-left-questions {
+        .faq-item {
+          border-top: 1px solid $color-border;
+          border-left: 1px solid $color-border;
+          border-right: 1px solid $color-border;
+          overflow: hidden;
+          
+          &:first-of-type {
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+          }
+          &:last-of-type {
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            border-bottom: 1px solid $color-border;
+          }
+
+          &.active {
+            .faq-question {
+              background: $color-border;
+
+              img {
+                transform: rotate(180deg);
+              }
+            }
+          }
+
+          .faq-question {
+            display: flex;
+            justify-content: space-between;
+            padding: 1.5rem;
+            width: 100%;
+
+            h4 {
+              font-size: 20px;
+              font-weight: 400;
+              font-family: $font-secondary;
+              color: $color-body;
+            }
+
+            img {
+              width: 20px;
+              height: 20px;
+            }
+          }
+
+          .faq-answer {
+            padding: 1.5rem;
+          }
+        }
+      }
+    }
+
+    .faq-right {
+      width: calc(33.4% - 2.5rem);
+
+      .faq-right-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        > div {
+          display: flex;
+          gap: 1.5rem;
+        }
+
+        input, textarea {
+          width: 100%;
+          padding: 1.5rem;
+          font-size: 1.9rem;
+          border: 2px solid $color-border;
+        }
+
+        textarea {
+          min-width: 100%;
+          max-width: 100%;
+          height: 17rem;
+          font-family: $font-main;
+        }
+
+        .status-box {
+          text-align: center;
+        }
+
+        :disabled {
+          opacity: 50%;
+          pointer-events: none;
+        }
+      }
+    }
+  }
+}
