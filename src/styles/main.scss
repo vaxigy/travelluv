@@ -419,7 +419,6 @@ footer {
 
 .article {
   padding-top: 10rem;
-  padding-bottom: 14rem;
 
   .article-wrap {
     display: flex;
@@ -845,6 +844,131 @@ footer {
           opacity: 50%;
           pointer-events: none;
         }
+      }
+    }
+  }
+}
+
+.comments {
+  padding-top: 7rem;
+  padding-bottom: 14rem;
+
+  .comments-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+
+    h3 {
+      font-size: 2.7rem;
+      font-weight: 600;
+      font-family: $font-secondary;
+      color: $color-heading;
+    }
+
+    .comment-items {
+      > .comment-item:not(:last-of-type) {
+        margin-bottom: 1.6rem;
+      }
+
+      .comment-replies {
+        .comment-item {
+          margin-left: 1.6rem;
+        }
+
+        .comment-item:not(:first-of-type) {
+          margin-top: 1.6rem;
+        }
+
+        .comment-item:first-of-type {
+          margin-top: 0.6rem;
+        }
+      }
+
+      .comment-item { // shared
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        .comment-meta,
+        .comment-action {
+          display: flex;
+          gap: 0.8rem;
+        }
+
+        .comment-meta {
+          .comment-name {
+            font-size: 2rem;
+            font-weight: 500;
+            font-family: $font-secondary;
+            color: $color-heading;
+          }
+
+          .comment-date {
+            margin-top: 0.2rem;
+            color: $color-body;
+          }
+        }
+
+        .comment-action {
+          button {
+            font-size: 1.6rem;
+            color: $color-heading;
+            transition: all 0.2s;
+
+            &:hover {
+              color: $color-primary;
+              transition: all 0.2s;
+            }
+          }
+        }
+
+        .comment-reply-form {
+          display: flex;
+          flex-direction: column;
+          gap: 2.4rem;
+          width: 40%;
+
+          input, textarea {
+            font-size: 1.9rem;
+            padding: 1.5rem;
+            border: 2px solid $color-border;
+          }
+    
+          textarea {
+            height: 17rem;
+            font-family: $font-main;
+            min-width: 100%;
+            max-width: 100%;
+          }
+        }
+      }
+    }
+    
+    .comment-form {
+      display: flex;
+      flex-direction: column;
+      gap: 2.4rem;
+
+      input, textarea {
+        font-size: 1.9rem;
+        padding: 1.5rem;
+        border: 2px solid $color-border;
+      }
+
+      textarea {
+        height: 17rem;
+        font-family: $font-main;
+        min-width: 100%;
+        max-width: 100%;
+      }
+
+      > div {
+        display: flex;
+        gap: 1.2rem;
+      }
+
+      p {
+        text-align: center;
       }
     }
   }
