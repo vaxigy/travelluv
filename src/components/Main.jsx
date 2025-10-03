@@ -6,6 +6,7 @@ import SingleArticle from './pages/SingleArticle.jsx';
 import Blog from './pages/Blog.jsx';
 import Gallery from './pages/Gallery.jsx';
 import FAQ from './pages/FAQ.jsx';
+import AboutPage from './pages/AboutPage.jsx';
 
 function Main() {
   return (
@@ -17,6 +18,7 @@ function Main() {
         <Route path='/blog' element={<Blog />} />
         <Route path='/gallery' element={<Gallery />} />
         <Route path='/faq' element={<FAQ />} />
+        <Route path='/about' element={<AboutPage />} />
       </Routes>
     </main>
   );

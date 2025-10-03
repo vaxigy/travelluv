@@ -973,3 +973,25 @@ footer {
     }
   }
 }
+
+.intro-video {
+  padding: 14rem 0;
+  background: #f0f0f0;
+
+  .intro-video-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    text-align: center;
+
+    p {
+      color: $color-body;
+    }
+
+    iframe {
+      width: 100%;
+      aspect-ratio: 1 / 0.5625;
+      border-radius: 16px;
+    }
+  }
+}

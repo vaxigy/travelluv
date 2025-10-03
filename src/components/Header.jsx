@@ -4,8 +4,7 @@ import { NavLink } from 'react-router-dom';
 function fetchNavData() {
   return [
     { route: '/', title: 'Home' },
-    { route: '/pages', title: 'Pages' },
-    { route: '/booking', title: 'Booking' },
+    { route: '/about', title: 'About' },
     { route: '/blog', title: 'Blog' },
     { route: '/gallery', title: 'Gallery' },
     { route: '/contact', title: 'Contact' },
